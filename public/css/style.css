@@ -1,0 +1,45 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+nav h1 a{
+    font-size: 26px;   
+    background: none;
+}
+
+nav h1 a:hover {
+    color: aquamarine;
+    background: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(9, 120, 1);
+    padding: .6rem 1rem;
+    border-radius: 5px;
+    transition: background-color .3s, color .3s;
+}
+
+nav a:hover {
+    background-color: rgb(2, 102, 102);
+    color: #fff;
+}
