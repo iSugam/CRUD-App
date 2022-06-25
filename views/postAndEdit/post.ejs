@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+
+<%- include("../nav") -%>
+
+<div class="container mt-5">
+    <h2>Post an Article</h2>
+    <form autocomplete="off" action="/article/" method="POST">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title of the post</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Write a title">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Description of the post</label>
+            <textarea class="form-control" name="description" id="description" rows="8"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-info">Submit</button>
+        <a href="/" class="btn btn-dark">Cancel</a>
+    </form>
+</div>
+
+<%- include("../partials/footer") %>

@@ -1,10 +1,10 @@
 <%- include("../partials/header") %>
 
-<%- include(".././nav") -%>
+<%- include("../nav") -%>
 
-<div class="container">
+<div class="container mt-5">
+    <h2>Update Post</h2>
     <input type="hidden" name="_id" value="<%=article._id%>">
-    <h2><%= formHeading %></h2>
     <form autocomplete="off" action="/article/" method="POST">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title of the post</label>
