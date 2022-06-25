@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get("/", (req, res) => {
 
     Article.find((err, foundArticles) => {
-        if(!err) res.render("home", {articles: foundArticles})
+        if(!err) res.render("home", {articles: foundArticles});
         console.log(err);
     })
    
