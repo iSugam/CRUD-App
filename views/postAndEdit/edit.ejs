@@ -4,8 +4,9 @@
 
 <div class="container mt-5">
     <h2>Update Post</h2>
-    <input type="hidden" name="_id" value="<%=article._id%>">
-    <form autocomplete="off" action="/article/" method="POST">
+
+    <form autocomplete="off" action="/article/<%=article.id%>" method="POST">
+        <input type="hidden" name="id" value="<%=article._id%>">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title of the post</label>
             <input type="text" class="form-control" name="title" id="title" placeholder="Write a title" value="<%= article.title %>">
