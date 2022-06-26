@@ -10,13 +10,11 @@ router.get("/", (req, res) => {
 // For Posting an Article
 router.post("/", (req, res) => {
 
-    let data = new Article({
+    let data = Article.create({
         title : req.body.title,
-        publishDate: new Date().toLocaleDateString(),
         description: req.body.description
     })
-    data.save(err => console.log(err));
-    res.redirect(".././");
+    res.redirect("/");
 })
 
 // Get the article Editing Form route
@@ -29,23 +27,26 @@ router.get("/:id",  (req, res) => {
     })
         
 }catch(err) {
-        console.log(err);
+        console.log(err.message);
     }
 })
 
 // For Updating an Article
-router.post("/:id", async (req, res) => {
-    let articleID = req.body._id;
+router.post("/:id", (req, res) => {
 
+    updateArticle(req, res)
+
+})
+
+async function updateArticle(req, res) {
     try {
-        await Article.findByIdAndUpdate(articleID, {title: req.body.title, description: req.body.description}, {returnOriginal: true});
+        await Article.findOneAndUpdate({_id : req.params.id}, req.body);
         res.redirect("/");
     }   
     catch (error) {
-        console.log(error);
+        console.log(error.message);
     }
-
-})
+}
 
 // Fro Deleting an Article
 router.get("/delete/:id", async (req, res) => {
@@ -53,7 +54,7 @@ router.get("/delete/:id", async (req, res) => {
         await Article.findOneAndRemove({_id: req.params.id});
         res.redirect("/");
     } catch (err) {
-        console.log(err);
+        console.log(err.message);
     }
    
 })
