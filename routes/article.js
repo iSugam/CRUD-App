@@ -12,10 +12,11 @@ router.post("/", (req, res) => {
 
     let data = Article.create({
         title : req.body.title,
+        publishDate: new Date(),
         description: req.body.description
     })
     res.redirect("/");
-})
+});
 
 // Get the article Editing Form route
 router.get("/:id",  (req, res) => {
@@ -24,19 +25,17 @@ router.get("/:id",  (req, res) => {
   try { 
      Article.findById(articleID, (err, foundArticle) => {
         res.render("./postAndEdit/edit", {article: foundArticle});
-    })
+    });
         
 }catch(err) {
         console.log(err.message);
     }
-})
+});
 
 // For Updating an Article
 router.post("/:id", (req, res) => {
-
-    updateArticle(req, res)
-
-})
+    updateArticle(req, res);
+});
 
 async function updateArticle(req, res) {
     try {
@@ -46,7 +45,7 @@ async function updateArticle(req, res) {
     catch (error) {
         console.log(error.message);
     }
-}
+};
 
 // Fro Deleting an Article
 router.get("/delete/:id", async (req, res) => {
@@ -57,7 +56,7 @@ router.get("/delete/:id", async (req, res) => {
         console.log(err.message);
     }
    
-})
+});
 
 // Export the module
 module.exports = router;
