@@ -47,7 +47,7 @@ async function updateArticle(req, res) {
     }
 };
 
-// Fro Deleting an Article
+// For Deleting an Article
 router.get("/delete/:id", async (req, res) => {
     try {
         await Article.findOneAndRemove({_id: req.params.id});
