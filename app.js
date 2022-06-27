@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
 
-
+// Home Page
 app.get("/", (req, res) => {
 
     Article.find((err, foundArticles) => {
@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
     });
 });
 
+// Page to show the full article
 app.get("/fullpost/:id", (req, res) => {
     
     Article.findOne({_id: req.params.id},(err, foundArticles) => {
