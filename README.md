@@ -66,7 +66,6 @@ app.use("/article", articleRouter);
 </div>
 <%- include("partials/footer") -%>
 ```
-
 #### Load the articleRouter after all the files are loaded to get all the files.
 ```javascript
 app.use("/article", articleRouter);
@@ -128,6 +127,9 @@ router.post("/", (req, res) => {
 });
 
 ```
+### ### Image of HTML Form for posting
+![](public/assets/post-article.png)
+
 # Read
 
 ### For Reading the created article in home page with ejs
@@ -158,6 +160,8 @@ router.post("/", (req, res) => {
 </div>
 <%- include("partials/footer") -%>
 ```
+#### Image of home page
+![](public/assets/show-in-homepage.png)
 
 ### For Reading the created article in dynamically created page with the article _id
 ```html
@@ -174,6 +178,8 @@ router.post("/", (req, res) => {
 
 <%- include("partials/footer") -%>
 ```
+#### Image of Dynamic page for reading article which are above 50 characters long
+![](public/assets/show-post-in-dynamicpage.png)
 # Edit
 
 ### Use an HTML Form to get all the data from a post and embed it in an edit form by its _id.
@@ -208,6 +214,8 @@ router.post("/", (req, res) => {
 
 <%- include("../partials/footer") %>
 ```
+### Image of editing form
+![](public/assets/edit-article.png)
 
 ### Get the article in the HTML/EJS edit Form
 ```javascript
