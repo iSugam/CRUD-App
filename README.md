@@ -1,10 +1,10 @@
 
 # CRUD Application
-
 This is a CRUD app for Creating, Reading, Updating, and Deleting.
 Node.js, Express.js, EJS, and MongoDB (Mongoose) are among the tools used.
 Used BootStrap and Basic CSS for design.
-
+### ### Image of HTML Form for posting
+![](public/assets/CRUD-APP-HomePage.png)
 ## Setting up the app.JS file
 ### with Express.JS, dotenv, bodyParser, mongoose and express router
 ```javascript
