@@ -177,6 +177,11 @@ router.post("/", (req, res) => {
 # Edit
 
 ### Use an HTML Form to get all the data from a post and embed it in an edit form by its _id.
+### "action" inside the HTML Form should contain the "_id" of the post after the path.
+#### Example -- 
+```html
+<form action="/article/<%=article.id%>" method="POST"></form>
+```
 ```html
 <%- include("../partials/header") %>
 
